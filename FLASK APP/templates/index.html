@@ -1,0 +1,108 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTL | Covid 19 | Tracker App</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <h4> <img src="../static/images/covid.png">CV-19 Updates</h4>
+    <div class="container">
+        <div class="cases">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box">
+                        Total Cases
+                        <img class="arrow" src="../static/images/Down_red_arrow.png" alt="">
+                        <p class="number">{{allcountryreport[1].total_cases}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box">
+                        Recoveries
+                        <img class="arrow" src="../static/images/Up_green_arrow.png">
+                        <p class="number">{{allcountryreport[1].recoveries}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cases">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="box">
+                            Active Cases
+                            <img class="arrow" src="../static/images/Down_red_arrow.png">
+                            <p class="number">{{allcountryreport[1].activecase}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="box">
+                            Total Deaths
+                            <img class="arrow" src="../static/images/Down_red_arrow.png" alt="">
+                            <p class="number">{{allcountryreport[1].total_deaths}}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tina1">
+
+                <table>
+                    <tr>
+                        <th>Countries</th>
+                        <th>Active Cases</th>
+                        <th>Recovered</th>
+                        <th>Total Deaths</th>
+                        <th>Total Cases</th>
+                    </tr>
+                    {% for report in allcountryreport%}
+                    <tr>
+                        <th scope="row">{{report.name}}</th>
+                        <td>{{report.activecase}}</td>
+                        <td>{{report.recoveries}}</td>
+                        <td>{{report.total_deaths}}</td>
+                        <td>{{report.total_cases}}</td>
+                    </tr>   
+                    {% endfor %}
+                 
+                </table>
+
+            </div>
+
+            <div class="tina1">
+                <div class="bar">
+                    <div class="box">
+                        <h3>Health Tips</h3>
+                        <p class="tina2">Cover your mouth when sneezing</p>
+                        <p>Wash your hands regularly</p>
+                        <hr>
+                        <p>Avoid group gathering</p>
+
+
+                    </div>
+                </div>
+
+                <div class="bar">
+
+                    <div class="box">
+                        <h3>News & Updates</h3>
+                        <img class="tina3" src="../static/images/family.jpg">
+
+
+                    </div>
+
+                </div>
+
+
+
+</body>
+
+</html>
